@@ -1,10 +1,3 @@
-% generate_fig_c1_vs_c2.m
-% Gera figura comparativa entre calibração livre (C1) e restrita (C2)
-% para o modelo SEIR. Salva fig8_c1_vs_c2.png
-%
-% Execute DEPOIS de rodar run_mpox_paper_pipeline.m (que já carrega 'data')
-% ou rode standalone (vai recarregar os dados).
-
 clear; clc; close all;
 pkg load io;
 more off;
@@ -17,7 +10,7 @@ t = data.t;
 y = data.y;
 
 % ---------------------------------------------------------------
-% Condições iniciais (mesmas do fit_seir_mpox.m)
+% Condições iniciais 
 % ---------------------------------------------------------------
 E0 = max(1, round(y(1)));
 I0 = max(1, round(y(1)));
@@ -26,7 +19,7 @@ S0 = N - E0 - I0 - R0_ic;
 IC = [S0; E0; I0; R0_ic];
 
 % ---------------------------------------------------------------
-% C1 - parâmetros da calibração livre (resultados anteriores)
+% C1 - parâmetros da calibração livre 
 % ---------------------------------------------------------------
 p_c1 = [1.8754, 0.9550, 1.7787];   % beta, sigma, gamma
 sim_c1 = simulate_seir_rk4(t, p_c1, N, IC);
