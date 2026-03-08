@@ -36,12 +36,16 @@ run generate_fig_c1_vs_c2.m
 | `load_mpox_brazil_firstwave.m` | Carregamento e pré-processamento |
 ```
 
-Clique **Commit changes**.
+## Atribuições e licenças
 
----
+- Toolkit EPIDEMIC (Cunha Jr. et al.): MIT License  
+  https://github.com/americocunhajr/EPIDEMIC
 
-### 4. Copiar a URL e adicionar no artigo
+- Dados epidemiológicos: Our World in Data, CC BY  
+  https://ourworldindata.org/mpox  
+  Baixe o arquivo `owid-monkeypox-data.csv` e coloque 
+  na mesma pasta antes de executar.
 
-A URL do repositório será:
-```
-https://github.com/calex-ifmg/mpox-compartmental-models
+## Este repositório
+Licença MIT. Código original desenvolvido para o artigo 
+submetido ao SBCAS 2026.
