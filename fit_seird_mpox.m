@@ -11,15 +11,15 @@ function fit = fit_seird_mpox(data)
   S0 = N - E0 - I0 - R0 - D0;
   IC = [S0; E0; I0; R0; D0];
 
-%  p0 = [0.65, 0.25, 0.15, 0.001];  % beta sigma gamma mu
-%  lb = [1e-6, 1e-6, 1e-6, 0];
-%  ub = [5, 3, 2, 0.05];
+  p0 = [0.65, 0.25, 0.15, 0.001];  % beta sigma gamma mu
+  lb = [1e-6, 1e-6, 1e-6, 0];
+  ub = [5, 3, 2, 0.05];
 
 % DEPOIS:
-p0 = [0.65, 1/10, 1/14, 0.001];
+%p0 = [0.65, 1/10, 1/14, 0.001];
 % DEPOIS:
-lb = [1e-6, 1/21, 1/28, 0];
-ub = [5,    1/5,  1/7,  0.05];
+%lb = [1e-6, 1/21, 1/28, 0];
+%ub = [5,    1/5,  1/7,  0.05];
 
   obj = @(p) seird_obj(bound(p, lb, ub), t, y, N, IC);
   p = fminsearch(obj, p0);
@@ -48,3 +48,4 @@ function p = bound(p, lb, ub)
   p = max(p, lb);
   p = min(p, ub);
 end
+
